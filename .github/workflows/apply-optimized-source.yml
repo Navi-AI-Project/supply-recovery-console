@@ -1,0 +1,44 @@
+name: Apply optimized source
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - github-update-source.zip
+      - .github/workflows/apply-optimized-source.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Apply verified source update
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -f github-update-source.zip
+          unzip -o github-update-source.zip
+          rm github-update-source.zip
+          rm .github/workflows/apply-optimized-source.yml
+          rmdir .github/workflows
+          rmdir .github
+
+      - name: Commit optimized source
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            exit 0
+          fi
+          git commit -m "Expose the human-agent authority path"
+          git push
