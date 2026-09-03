@@ -3,6 +3,7 @@
 import { Activity, AlertTriangle, CheckCircle2, Network, ShieldCheck, SlidersHorizontal } from 'lucide-react';
 import { NetworkMap } from '@/components/network-map';
 import { PlanPanel } from '@/components/plan-panel';
+import { CollaborationRail } from '@/components/collaboration-rail';
 import { formatCurrency, type RecoveryConstraints, type RecoveryPlan } from '@/lib/recovery';
 import type { Phase } from '@/lib/recovery-state';
 
@@ -61,8 +62,10 @@ export function NetworkView(props: NetworkViewProps) {
         <button onClick={props.onOpenPlans} className="rounded-md border border-[#cfd4ce] px-2.5 py-1.5 text-[10px] font-semibold hover:bg-[#f0f2ee]">Adjust</button>
       </div>
 
+      <CollaborationRail phase={props.phase} />
+
       <div className="mt-3 grid gap-3 xl:grid-cols-[minmax(0,1fr)_340px]">
-        <section className="border border-[#d8dcd6] bg-white">
+        <section className="min-w-0 border border-[#d8dcd6] bg-white">
           <div className="flex items-center justify-between border-b border-[#e3e6e1] px-3 py-2.5"><div className="flex items-center gap-2"><Network size={15} /><h2 className="text-xs font-semibold">Network impact</h2></div><div className="flex gap-3 text-[9px] text-[#717872]"><span>Open</span><span className="text-[#b26a19]">Watch</span><span className="text-[#d7563e]">Closed</span></div></div>
           <NetworkMap plan={props.plan} phase={props.phase} focusedEntityId={props.focusedEntityId} onFocus={props.onFocus} />
         </section>

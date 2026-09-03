@@ -93,6 +93,19 @@ npm run dev
 
 Open the local URL printed by the development server. WebMCP tools require a supported browser context such as the ChatGPT in-app browser or a compatible Chromium build.
 
+## Judge testing instructions
+
+No account, API key, external service, or sample-data import is required.
+
+1. Open the [live application](https://supply-recovery-console.kkrr555666.chatgpt.site) in the ChatGPT in-app browser or another imperative-WebMCP-compatible browser.
+2. Confirm that eight base tools are available in the page tool list.
+3. Ask the agent: `Inspect the active disruption, list the three critical orders, draft balanced and service-first plans, compare them, and request approval for the better fit. Do not approve or commit anything.`
+4. Review the exact visible change set, check the acknowledgement, and click **Approve plan**.
+5. Confirm that `commit_approved_plan` is now available, then ask the agent to commit the approved plan.
+6. Confirm that the network, metrics, and audit log update together and that `undo_last_commit` replaces the commit tool.
+
+The intended end-to-end path takes about 90 seconds. Resetting the scenario restores a deterministic starting state.
+
 ## Validation
 
 ```bash

@@ -280,7 +280,7 @@ export function createPlan(strategy: Strategy, constraints: RecoveryConstraints)
   if (constraints.maxBudgetUsd <= 15000) objectiveFit += strategy === 'cost_guarded' ? 18 : -8;
   if (constraints.maxPriorityDelayHours <= 12) objectiveFit += strategy === 'service_first' ? 15 : -4;
   if (constraints.maxHubUtilizationPct <= 80) objectiveFit += strategy === 'resilience' ? 18 : -20;
-  const score = Math.round(clamp(serviceScore + costScore + resilienceScore + objectiveFit - violations.length * 9, 0, 100));
+  const score = Math.round(clamp(serviceScore + costScore + resilienceScore + objectiveFit - violations.length * 9, 0, 99));
 
   return {
     id: template.id,

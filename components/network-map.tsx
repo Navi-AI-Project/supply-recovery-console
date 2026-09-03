@@ -42,8 +42,8 @@ export function NetworkMap({ plan, phase, focusedEntityId, onFocus }: NetworkMap
   const committed = phase === 'committed';
 
   return (
-    <div className="relative min-h-[382px] overflow-hidden bg-[#f8f9f6] p-3">
-      <svg viewBox="0 0 660 300" className="h-full min-h-[342px] w-full" aria-label="Interactive supply network from western ports to eastern distribution hubs">
+    <div className="relative min-h-[350px] overflow-x-auto overflow-y-hidden bg-[#f8f9f6] p-3">
+      <svg viewBox="0 0 660 300" className="h-full min-h-[318px] w-full max-sm:min-w-[620px]" aria-label="Interactive supply network from western ports to eastern distribution hubs">
         <title>Interactive supply network from western ports to eastern distribution hubs</title>
         <defs>
           <pattern id="network-grid" width="28" height="28" patternUnits="userSpaceOnUse">

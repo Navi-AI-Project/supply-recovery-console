@@ -86,7 +86,7 @@ export function RecoveryDialogs(props: RecoveryDialogsProps) {
                 <div className="divide-y divide-[#e8ebe6] border-y border-[#e8ebe6]">
                   {plan.actions.map((action) => (
                     <div key={action.id} className="grid grid-cols-[26px_1fr_auto] items-start gap-2 py-2.5">
-                      <span className="grid size-6 place-items-center rounded-md bg-[#edf2ed] text-[9px] font-semibold">{action.id.split('-').at(-1)}</span>
+                      <span className="grid size-6 place-items-center rounded-md bg-[#edf2ed] text-[9px] font-semibold">{action.id.includes('CRITICAL') ? 'C' : action.id.includes('EXPRESS') ? 'E' : action.id.split('-').at(-1)}</span>
                       <div><p className="text-[11px] font-medium">{action.label}</p><p className="mt-0.5 text-[10px] leading-4 text-[#737a74]">{action.detail}</p></div>
                       <span className="hidden text-[9px] text-[#1f6659] sm:block">{action.effect}</span>
                     </div>

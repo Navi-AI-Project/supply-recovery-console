@@ -6,7 +6,9 @@ import {
   Check,
   CheckCircle2,
   Clock3,
+  Bot,
   GitCompareArrows,
+  LockKeyhole,
   PackageCheck,
   RotateCcw,
   Sparkles,
@@ -40,10 +42,23 @@ export function PlanPanel({ plan, phase, onDraft, onReview, onCompare, onCommit,
           <p className="text-[10px] font-semibold uppercase text-[#777e78]">Recovery workspace</p>
           <h2 className="mt-1 text-sm font-semibold">No plan drafted</h2>
         </div>
-        <div className="flex flex-1 flex-col items-center justify-center px-6 text-center">
-          <div className="grid size-10 place-items-center rounded-md bg-[#edf2ed] text-[#394039]"><Sparkles size={18} /></div>
-          <h3 className="mt-4 text-sm font-semibold">Turn the disruption into options</h3>
-          <p className="mt-2 max-w-[250px] text-[11px] leading-5 text-[#717872]">Simulate service, cost, and resilience strategies against the current constraints.</p>
+        <div className="flex flex-1 flex-col justify-center px-5 py-6 text-center">
+          <div className="mx-auto grid size-10 place-items-center rounded-md bg-[#edf2ed] text-[#394039]"><Sparkles size={18} /></div>
+          <h3 className="mt-3 text-sm font-semibold">Turn the disruption into options</h3>
+          <p className="mx-auto mt-2 max-w-[260px] text-[11px] leading-5 text-[#717872]">Simulate service, cost, and resilience strategies against the current constraints.</p>
+
+          <div className="mx-auto mt-5 grid w-full max-w-[270px] grid-cols-[1fr_auto_1fr] items-center border-y border-[#e5e8e3] py-3 text-left">
+            <div className="flex items-center gap-2">
+              <span className="grid size-7 shrink-0 place-items-center rounded-md bg-[#e7f5f0] text-[#176453]"><Bot size={14} /></span>
+              <span><strong className="block text-[9px]">Agent proposes</strong><span className="text-[8px] text-[#858c86]">Structured options</span></span>
+            </div>
+            <ArrowRight size={13} className="mx-2 text-[#a1a7a1]" />
+            <div className="flex items-center justify-end gap-2 text-right">
+              <span><strong className="block text-[9px]">Human approves</strong><span className="text-[8px] text-[#858c86]">Commit stays locked</span></span>
+              <span className="grid size-7 shrink-0 place-items-center rounded-md bg-[#f7f0e4] text-[#93651e]"><LockKeyhole size={14} /></span>
+            </div>
+          </div>
+
           <button onClick={onDraft} className="mt-5 flex items-center gap-2 rounded-md bg-[#202421] px-4 py-2.5 text-xs font-semibold text-white hover:bg-[#303530]">
             Generate recovery plans <ArrowRight size={14} />
           </button>
