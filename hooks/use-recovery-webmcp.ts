@@ -242,7 +242,6 @@ export function useRecoveryWebMCP({ state, dispatch, openApproval, openCompariso
       },
       annotations: { readOnlyHint: false, untrustedContentHint: false },
       execute: async (input) => {
-        if (stateRef.current.phase === 'committed') throw new Error('COMMIT_ACTIVE: the current plan is already committed. Undo it before requesting another approval.');
         const value = record(input);
         if (typeof value.entityId !== 'string') throw new Error('INVALID_ENTITY_ID: provide a node or order ID.');
         const entityId = value.entityId.toUpperCase();

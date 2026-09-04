@@ -1,0 +1,58 @@
+name: Bug report
+description: Report reproducible incorrect behavior in the application or WebMCP tools.
+title: "[Bug]: "
+body:
+  - type: markdown
+    attributes:
+      value: Thanks for helping improve the reference implementation. Do not include credentials or sensitive operational data.
+  - type: textarea
+    id: behavior
+    attributes:
+      label: What happened?
+      description: Describe the observed behavior and what you expected instead.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Reproduction steps
+      description: Include the starting state, visible actions or agent prompt, and relevant tool arguments.
+      placeholder: |
+        1. Reset the scenario
+        2. Generate plans
+        3. Call ...
+    validations:
+      required: true
+  - type: dropdown
+    id: surface
+    attributes:
+      label: Affected surface
+      options:
+        - Manual user interface
+        - WebMCP tool discovery
+        - WebMCP tool execution
+        - Approval or commit lifecycle
+        - Recovery simulation
+        - Build or development setup
+        - Documentation
+    validations:
+      required: true
+  - type: input
+    id: browser
+    attributes:
+      label: Browser or agent environment
+      description: Include the browser version and WebMCP client when relevant.
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Additional evidence
+      description: Add sanitized logs, screenshots, or links that help reproduce the problem.
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Safety checks
+      options:
+        - label: I removed credentials, customer data, and other sensitive information.
+          required: true
+        - label: I searched existing issues for the same problem.
+          required: true

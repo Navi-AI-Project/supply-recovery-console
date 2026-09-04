@@ -4,6 +4,7 @@ import { useCallback, useMemo, useReducer, useState } from 'react';
 import {
   AlertTriangle,
   Box,
+  Code2,
   Network,
   RefreshCcw,
   Route,
@@ -77,6 +78,7 @@ export function RecoveryConsole() {
           <div><p className="text-sm font-semibold leading-none">Supply Recovery Console</p><p className="mt-1 text-[10px] text-[#aeb5af]">Scenario SR-204 - Pacific closure</p></div>
         </div>
         <div className="flex items-center gap-2">
+          <a href="https://github.com/Navi-AI-Project/supply-recovery-console" target="_blank" rel="noreferrer" className="grid size-8 place-items-center rounded-md border border-[#444a45] text-[#d7dbd7] hover:bg-[#2c312d]" aria-label="View source on GitHub" title="View source on GitHub"><Code2 size={15} /></a>
           <button onClick={() => setToolsOpen(true)} className="flex items-center gap-2 rounded-md border border-[#444a45] px-2.5 py-1.5 text-[11px] text-[#d7dbd7] hover:bg-[#2c312d]">
             <span className={`size-1.5 rounded-full ${state.webmcpSupported === false ? 'bg-[#e1a749]' : 'bg-[#d7ff64]'}`} />
             <span className="hidden sm:inline">{toolStatus}</span>

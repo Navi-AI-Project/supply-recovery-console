@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Live demonstration
+    url: https://supply-recovery-console.kkrr555666.chatgpt.site
+    about: Reproduce the workflow in the hosted synthetic scenario before reporting an issue.
+  - name: WebMCP specification
+    url: https://github.com/webmachinelearning/webmcp
+    about: Report specification-level questions or proposals to the upstream WebMCP project.

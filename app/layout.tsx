@@ -8,18 +8,18 @@ const geistMono = Geist_Mono({ variable: '--font-geist-mono', subsets: ['latin']
 export const metadata: Metadata = {
   metadataBase: new URL('https://supply-recovery-console.kkrr555666.chatgpt.site'),
   title: 'Supply Recovery Console',
-  description: 'A human-agent control room for resolving supply chain disruptions with WebMCP.',
+  description: 'An open-source WebMCP reference app for auditable, human-approved supply-chain recovery.',
   icons: { icon: '/favicon.svg' },
   openGraph: {
     title: 'Supply Recovery Console',
-    description: 'A human-agent control room for resolving supply chain disruptions with WebMCP.',
+    description: 'An open-source WebMCP reference app for auditable, human-approved supply-chain recovery.',
     type: 'website',
     images: [{ url: '/og.png', width: 1200, height: 750, alt: 'Supply Recovery Console network workspace' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Supply Recovery Console',
-    description: 'A human-agent control room for resolving supply chain disruptions with WebMCP.',
+    description: 'An open-source WebMCP reference app for auditable, human-approved supply-chain recovery.',
     images: ['/og.png'],
   },
 };
